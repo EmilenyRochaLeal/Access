@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block titulo %} Flask {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    <main>
+        {% block principal %}
+        <form method="POST">
+            <h1>Login</h1>
+            {{ form.csrf_token }}
+
+            {{ form.email.label }} {{ form.email() }}
+
+            {{ form.senha.label }} {{ form.senha() }}
+
+            {{ form.botao() }}
+        </form>
+        <div class="link-container">
+            <a href="{{ url_for('criarconta') }}">Criar conta</a>
+        </div>
+        {% endblock %}
+    </main>
+    {% endblock %}
+</body>
+</html>
