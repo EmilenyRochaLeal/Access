@@ -1,0 +1,62 @@
+/* Centraliza o conteúdo principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Estiliza o link de "Sair" */
+main > div:first-child {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+main > div:first-child a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+main > div:first-child a:hover {
+    color: #0056b3;
+}
+
+/* Estiliza o texto de saudação */
+main > div:last-child p {
+    font-size: 48px;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* Animação de escrita para o nome do usuário */
+main > div:last-child p > span {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #333;
+    }
+}

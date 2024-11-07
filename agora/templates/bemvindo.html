@@ -4,13 +4,17 @@
 Flask: {{ usuario }}
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='bemvindo.css') }}">
+{% endblock %}
+
 {% block body %}
 <main>
     <div>
         <a href="{{ url_for('sair') }}">Sair</a>
     </div>
     <div>
-        <p> Olá, {{ usuario }} </p>
+        <p> Olá, <span>{{ usuario }}</span> </p>
     </div>
 </main>
 {% endblock %}
